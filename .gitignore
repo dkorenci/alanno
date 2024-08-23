@@ -1,4 +1,12 @@
+.gitignore
+
 .vscode/
+.idea
+
+*.pyc
+__pycache__
+.ipynb_checkpoints
+
 __pycache__/
 datasets/
 staticfiles/
