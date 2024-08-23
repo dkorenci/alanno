@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.3.0-base-ubuntu20.04
+FROM nvidia/cuda:11.3.1-base-ubuntu20.04
 
 ENV TZ=Europe/Zagreb
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED 1
 
 RUN apt update && apt install -y python3-dev libpq-dev
 RUN apt-get update && apt-get install -y python3.8 python3-pip
-RUN pip install --upgrade pip
+RUN pip install pip==23.3.2
 
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
